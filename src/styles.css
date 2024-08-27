@@ -1,11 +1,13 @@
 :root {
     --bs-bg: #1f2127;
+    --bs-card-bg: #252730;
     --bs-dark: #191B20;
     --bs-blue: #4360ed;
     --bs-blue-darken: #3A61F6;
     --bs-gray: #808191;
     --bs-white: #fff;
-    --bs-left-menu-width: 400px;
+    --bs-left-menu-width: 350px;
+    --bs-gap: 25px;
 }
 
 *,
@@ -131,6 +133,28 @@ body {
 
 .blue-text {
     color: var(--bs-blue);
+}
+
+/* Grid */
+
+.row {
+    display: flex;
+    gap: var(--bs-gap);
+    padding: var(--bs-gap);
+}
+
+.col-50 {
+    width: 50%;
+}
+
+.card {
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    color: var(--bs-gray);
+    background-color: var(--bs-card-bg)
 }
 
 /* Icons */

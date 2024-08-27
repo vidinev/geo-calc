@@ -32,7 +32,7 @@ main {
 
 .navbar-description-wrapper {
     flex: 1;
-    padding: 25px;
+    padding: var(--bs-gap);
 }
 
 .navbar-main-description {
@@ -92,14 +92,14 @@ main {
 }
 
 
-.nav-item:hover {
+.nav-item:hover, .nav-item.nav-active {
     background: var(--bs-dark);
 }
 
-.nav-item:hover .menu-title {
+.nav-item:hover .menu-title, .nav-item.nav-active .menu-title {
     color: var(--bs-blue-darken);
 }
 
-.nav-item:hover .nav-icon {
+.nav-item:hover .nav-icon, nav-item.nav-active .nav-icon {
     filter: drop-shadow(0 0 6px var(--bs-blue-darken));
 }

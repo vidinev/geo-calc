@@ -1,58 +1,53 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {NgClass} from "@angular/common";
+import {GasComponent} from "./gas/gas.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgClass],
+  imports: [RouterOutlet, NgClass, GasComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  activeTab = 0;
   menuItems = [{
     title: 'Газопроникність',
-    image: 'bg-gas',
-    id: 1
+    image: 'bg-gas'
   }, {
     title: 'Капілярний тиск',
-    image: 'bg-press',
-    id: 2
+    image: 'bg-press'
   }, {
     title: 'Центрифугування',
-    image: 'bg-centrifuge',
-    id: 3
+    image: 'bg-centrifuge'
   }, {
     title: 'Питомий опір',
-    image: 'bg-resistant ',
-    id: 4
+    image: 'bg-resistant '
   }, {
     title: 'Пористість',
-    image: 'bg-pores',
-    id: 5
+    image: 'bg-pores'
   }, {
     title: 'Об\'ємна вага',
-    image: 'bg-volume',
-    id: 6
+    image: 'bg-volume'
   }, {
     title: 'Мінералогічна густина',
-    image: 'bg-density',
-    id: 7
+    image: 'bg-density'
   }, {
     title: 'Карбонатність',
-    image: 'bg-carbon',
-    id: 8
+    image: 'bg-carbon'
   }, {
     title: 'Нафтонасичення',
-    image: 'bg-oil',
-    id: 9
+    image: 'bg-oil'
   }, {
     title: 'С Органічний',
-    image: 'bg-c_organic',
-    id: 10
+    image: 'bg-c_organic'
   }, {
     title: 'Об.вага в парафіні',
-    image: 'bg-wax',
-    id: 11
+    image: 'bg-wax'
   }];
+
+  setActiveTab(index: number) {
+    this.activeTab = index;
+  }
 }

@@ -15,8 +15,8 @@
     <div class="container">
         <nav class="side-menu">
            <ul class="nav">
-               @for (item of menuItems; track item.id) {
-                   <li class="nav-item">
+               @for (item of menuItems; track i; let i = $index) {
+                   <li class="nav-item" [class.nav-active]="activeTab === i" (click)="setActiveTab(i)">
                        <a class="nav-link">
                            <i class="nav-icon" [ngClass]="item.image"></i>
                            <span class="menu-title">{{item.title}}</span>
@@ -27,6 +27,14 @@
 
         </nav>
         <div class="container">
+            @switch (activeTab) {
+                @case (0) {
+                    <app-gas></app-gas>
+                }
+                @case (1) {
+                    <h1>123</h1>
+                }
+            }
 
         </div>
     </div>
