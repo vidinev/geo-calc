@@ -21,7 +21,7 @@
         <nav class="side-menu">
            <ul class="nav">
                @for (item of menuItems; track i; let i = $index) {
-                   <li class="nav-item" [class.nav-active]="activeTab === i" (click)="setActiveTab(i)">
+                   <li class="nav-item" [class.nav-active]="activeTab === item.id" (click)="setActiveTab(item.id)">
                        <a class="nav-link">
                            <i class="nav-icon" [ngClass]="item.image"></i>
                            <span class="menu-title">{{item.title}}</span>
@@ -35,11 +35,38 @@
         <!-- Компоненти -->
         <div class="container">
             @switch (activeTab) {
-                @case (0) {
+                @case (appComponents.gas) {
                     <app-gas></app-gas>
                 }
-                @case (1) {
-                    <h1>123</h1>
+                @case (appComponents.press) {
+                    <h1 class="navbar-semi-bold-white">pressure</h1>
+                }
+                @case (appComponents.centrifuge) {
+                    <h1 class="navbar-semi-bold-white">centrifuge</h1>
+                }
+                @case (appComponents.resistant) {
+                    <h1 class="navbar-semi-bold-white">resistant</h1>
+                }
+                @case (appComponents.pores) {
+                    <h1 class="navbar-semi-bold-white">pores</h1>
+                }
+                @case (appComponents.volume) {
+                    <h1 class="navbar-semi-bold-white">volume</h1>
+                }
+                @case (appComponents.density) {
+                    <h1 class="navbar-semi-bold-white">density</h1>
+                }
+                @case (appComponents.carbon) {
+                    <h1 class="navbar-semi-bold-white">carbon</h1>
+                }
+                @case (appComponents.oil) {
+                    <h1 class="navbar-semi-bold-white">oil</h1>
+                }
+                @case (appComponents.organic) {
+                    <h1 class="navbar-semi-bold-white">organic</h1>
+                }
+                @case (appComponents.wax) {
+                    <h1 class="navbar-semi-bold-white">wax</h1>
                 }
             }
         </div>

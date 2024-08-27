@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {NgClass} from "@angular/common";
-import {GasComponent} from "./gas/gas.component";
+import { RouterOutlet} from '@angular/router';
+import { NgClass } from '@angular/common';
+
+import { GasComponent } from './gas/gas.component';
+import { AppComponents } from './components.enum';
 
 @Component({
   selector: 'app-root',
@@ -11,43 +13,57 @@ import {GasComponent} from "./gas/gas.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  activeTab = 0;
+  activeTab = AppComponents.gas;
+  appComponents: typeof AppComponents =  AppComponents;
+
+  // Налаштування лівого меню
   menuItems = [{
     title: 'Газопроникність',
-    image: 'bg-gas'
+    image: 'bg-gas',
+    id: AppComponents.gas
   }, {
     title: 'Капілярний тиск',
-    image: 'bg-press'
+    image: 'bg-press',
+    id: AppComponents.press
   }, {
     title: 'Центрифугування',
-    image: 'bg-centrifuge'
+    image: 'bg-centrifuge',
+    id: AppComponents.centrifuge
   }, {
     title: 'Питомий опір',
-    image: 'bg-resistant '
+    image: 'bg-resistant',
+    id: AppComponents.resistant
   }, {
     title: 'Пористість',
-    image: 'bg-pores'
+    image: 'bg-pores',
+    id: AppComponents.pores
   }, {
     title: 'Об\'ємна вага',
-    image: 'bg-volume'
+    image: 'bg-volume',
+    id: AppComponents.volume
   }, {
     title: 'Мінералогічна густина',
-    image: 'bg-density'
+    image: 'bg-density',
+    id: AppComponents.density
   }, {
     title: 'Карбонатність',
-    image: 'bg-carbon'
+    image: 'bg-carbon',
+    id: AppComponents.carbon
   }, {
     title: 'Нафтонасичення',
-    image: 'bg-oil'
+    image: 'bg-oil',
+    id: AppComponents.oil
   }, {
     title: 'С Органічний',
-    image: 'bg-c_organic'
+    image: 'bg-c_organic',
+    id: AppComponents.organic
   }, {
     title: 'Об.вага в парафіні',
-    image: 'bg-wax'
+    image: 'bg-wax',
+    id: AppComponents.wax
   }];
 
-  setActiveTab(index: number) {
-    this.activeTab = index;
+  setActiveTab(id: AppComponents) {
+    this.activeTab = id;
   }
 }
