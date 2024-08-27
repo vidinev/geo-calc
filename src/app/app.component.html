@@ -1,4 +1,6 @@
 <main>
+
+    <!-- Хедер-->
     <nav class="navbar">
         <h1 class="navbar-brand">
             <span class="blue-text">Гео</span> Розрахунок
@@ -12,7 +14,10 @@
             </h3>
         </div>
     </nav>
+    <!-- / Хедер-->
+
     <div class="container">
+        <!-- Ліве меню -->
         <nav class="side-menu">
            <ul class="nav">
                @for (item of menuItems; track i; let i = $index) {
@@ -24,8 +29,10 @@
                    </li>
                }
            </ul>
-
         </nav>
+        <!-- / Ліве меню -->
+
+        <!-- Компоненти -->
         <div class="container">
             @switch (activeTab) {
                 @case (0) {
@@ -35,8 +42,8 @@
                     <h1>123</h1>
                 }
             }
-
         </div>
+        <!-- / Компоненти -->
     </div>
 </main>
 
