@@ -28,6 +28,9 @@ yarn-error.log
 !.vscode/extensions.json
 .history/*
 
+# Built Visual Studio Code Extensions
+*.vsix
+
 # Miscellaneous
 /.angular/cache
 .sass-cache/
@@ -40,3 +43,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Visual Studio Code Additional
+!.vscode/*.code-snippets
+.history/
